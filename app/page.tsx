@@ -1,10 +1,13 @@
 "use client"
 
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Activity, Calendar, Settings, User, Mail, Target, TrendingUp } from "lucide-react"
 
 export default function StreakFlowLanding() {
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50/35 via-blue-100/35 to-slate-50/35 relative overflow-hidden">
       {/* Background decorative elements */}
@@ -120,9 +123,11 @@ export default function StreakFlowLanding() {
             >
               Start Streak
             </a>
-            <Button variant="outline" className="px-8 py-6 text-base bg-transparent border-white border-2">
-              Watch Demo
-            </Button>
+            <a href="#demo">
+              <Button variant="outline" className="px-8 py-6 text-base bg-transparent border-white border-2">
+                Watch Demo
+              </Button>
+            </a>
           </div>
         </div>
 
@@ -330,18 +335,37 @@ export default function StreakFlowLanding() {
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
             <div className="relative bg-white rounded-2xl p-12 border border-gray-200 shadow-2xl">
-              {/* Demo Preview */}
+              {/* Video Container */}
               <div className="aspect-video bg-gradient-to-br from-slate-100 to-slate-200 rounded-xl mb-8 flex items-center justify-center relative overflow-hidden">
-                <img
-                  src="/modern-habit-tracking-app-demo-video-preview-with-.jpg"
-                  alt="StreakFlow demo video preview"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <button className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-all duration-200 group">
-                    <div className="w-0 h-0 border-l-[16px] border-l-purple-600 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1"></div>
-                  </button>
-                </div>
+                {!isVideoPlaying ? (
+                  <>
+                    <img
+                      src="/modern-habit-tracking-app-demo-video-preview-with-.jpg"
+                      alt="StreakFlow demo video preview"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <button 
+                        onClick={() => setIsVideoPlaying(true)}
+                        className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:bg-white transition-all duration-200 group"
+                      >
+                        <div className="w-0 h-0 border-l-[16px] border-l-purple-600 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1"></div>
+                      </button>
+                    </div>
+                  </>
+                ) : (
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/YWeWdyWbXao?si=SvNGD-vKmgtPd198&autoplay=1"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    className="rounded-xl"
+                  ></iframe>
+                )}
               </div>
 
               {/* Demo Description */}
