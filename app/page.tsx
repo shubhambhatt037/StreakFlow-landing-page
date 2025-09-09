@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Activity, Calendar, Settings, User, Mail, Target, TrendingUp } from "lucide-react"
+import { Activity, Calendar, Settings, User, Mail, Target, TrendingUp, Twitter, Github, Linkedin } from "lucide-react"
 
 export default function StreakFlowLanding() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
@@ -406,6 +406,57 @@ export default function StreakFlowLanding() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="relative z-10 px-20 py-12 bg-white/80 backdrop-blur-sm border-t border-gray-200/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col items-center justify-center space-y-6">
+            {/* Logo */}
+            <div className="flex items-center gap-3">
+              <img src="/images/streakflow-logo-new.png" alt="StreakFlow logo" className="w-8 h-8" />
+              <span className="text-xl font-bold text-black">StreakFlow</span>
+            </div>
+            
+            {/* Social Links */}
+            <div className="flex items-center gap-6">
+              <a
+                href="https://x.com/BhattBuilds"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-gray-100 hover:bg-gray-200 rounded-full transition-all duration-200 group"
+                aria-label="Follow on X (Twitter)"
+              >
+                <Twitter className="w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-200" />
+              </a>
+              
+              <a
+                href="https://github.com/shubhambhatt037"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-gray-100 hover:bg-gray-200 rounded-full transition-all duration-200 group"
+                aria-label="View GitHub profile"
+              >
+                <Github className="w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-200" />
+              </a>
+              
+              <a
+                href="https://www.linkedin.com/in/shubham-bhatt-48b002250/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-gray-100 hover:bg-gray-200 rounded-full transition-all duration-200 group"
+                aria-label="Connect on LinkedIn"
+              >
+                <Linkedin className="w-5 h-5 text-gray-600 group-hover:text-gray-900 transition-colors duration-200" />
+              </a>
+            </div>
+            
+            {/* Copyright */}
+            <p className="text-sm text-gray-500">
+              © 2024 StreakFlow. Built with ❤️ by Shubham Bhatt.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
