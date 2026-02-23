@@ -60,7 +60,7 @@ export default function StreakFlowLanding() {
           {/* Auth buttons */}
           <div className="flex items-center gap-2">
             <a
-              href="https://streakflow-frontend.onrender.com"
+              href="https://app.streakflow.shubhambhatt.me/"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 text-white font-medium rounded-md transition-all duration-200 inline-block"
@@ -106,7 +106,7 @@ export default function StreakFlowLanding() {
           {/* CTA buttons */}
           <div className="flex items-center justify-center gap-4">
             <a
-              href="https://streakflow-frontend.onrender.com"
+              href="https://app.streakflow.shubhambhatt.me/"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 text-white font-medium rounded-md transition-all duration-200 text-base inline-block"
@@ -386,7 +386,7 @@ export default function StreakFlowLanding() {
           {/* CTA after demo */}
           <div className="mt-12">
             <a
-              href="https://streakflow-frontend.onrender.com"
+              href="https://app.streakflow.shubhambhatt.me/"
               target="_blank"
               rel="noopener noreferrer"
               className="px-10 py-4 text-white font-semibold rounded-xl transition-all duration-200 text-lg shadow-lg hover:shadow-xl inline-block"
